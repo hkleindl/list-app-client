@@ -4,3 +4,12 @@ export const setCurrentUser = user => {
         user
     }
 }
+// async action creators
+export const login = credentials => {
+    return dispatch => {
+        const configObj = {
+            
+        }
+        return fetch("https://localhost:3000", configObj)
+    }
+}
