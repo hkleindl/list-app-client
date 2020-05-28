@@ -1,13 +1,23 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
-const Login = () => {
+const Login = (props) => {
     return (
         <form onSubmit={}>
-            <input type="text" name="username" value={} onChange={} placeholder="Username"/>
-            <input type="password" name="password" value={} onChange={} placeholder="Password"/>
+            <input type="text" name="username" value={props.username} onChange={} placeholder="Username"/>
+            <input type="password" name="password" value={props.password} onChange={} placeholder="Password"/>
             <input type="submit" value="Log In"/>
         </form>
     )
 }
 
-export default Login
+const mapStateToProps = state => {
+    return {
+        username: state.loginForm.username,
+        password: state.loginForm.password
+    }
+}
+
+
+
+export default connect(mapStateToProps)(Login)
