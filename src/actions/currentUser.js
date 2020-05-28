@@ -8,8 +8,12 @@ export const setCurrentUser = user => {
 export const login = credentials => {
     return dispatch => {
         const configObj = {
-            
+            method: "POST",
+            headers: {
+                "Content-Type" : "application/json"
+            },
+            body: JSON.stringify(credentials)
         }
-        return fetch("https://localhost:3000", configObj)
+        return fetch("https://localhost:3000/api/v1/login", configObj)
     }
 }
