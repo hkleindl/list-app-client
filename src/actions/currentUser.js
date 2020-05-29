@@ -29,7 +29,7 @@ export const login = credentials => {
     }
 }
 
-export const getCurrentUser = credentials => {
+export const getCurrentUser = () => {
     return dispatch => {
         const configObj = {
             method: "GET",
@@ -37,7 +37,7 @@ export const getCurrentUser = credentials => {
                 "Content-Type" : "application/json"
             }
         }
-        return fetch("http://localhost:3000/api/v1/login", configObj)
+        return fetch("http://localhost:3000/api/v1/get_current_user", configObj)
             .then(r => r.json())
             .then(user => {
                 if (user.error) {
