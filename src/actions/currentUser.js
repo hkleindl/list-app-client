@@ -6,7 +6,7 @@ export const setCurrentUser = user => {
 }
 // async action creators
 export const login = credentials => {
-    console.log("credentials are ".credentials)
+    console.log("credentials are ", credentials)
     return dispatch => {
         const configObj = {
             method: "POST",
@@ -15,6 +15,6 @@ export const login = credentials => {
             },
             body: JSON.stringify(credentials)
         }
-        return fetch("https://localhost:3000/api/v1/login", configObj)
+        return fetch("http://localhost:3000/api/v1/login", configObj)
     }
 }
