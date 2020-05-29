@@ -16,5 +16,15 @@ export const login = credentials => {
             body: JSON.stringify(credentials)
         }
         return fetch("http://localhost:3000/api/v1/login", configObj)
+            .then(r => r.json())
+            .then(user => {
+                if (user.error) {
+                    alert(user.error)
+                } else {
+                    dispatch(setCurrentUser(user))
+                }
+            }  
+            )
+            .catch(console.log)
     }
 }
