@@ -9,6 +9,7 @@ export const login = credentials => {
     console.log("credentials are ", credentials)
     return dispatch => {
         const configObj = {
+            credentials: "include",
             method: "POST",
             headers: {
                 "Content-Type" : "application/json"
@@ -32,6 +33,7 @@ export const login = credentials => {
 export const getCurrentUser = () => {
     return dispatch => {
         const configObj = {
+            credentials: "include",
             method: "GET",
             headers: {
                 "Content-Type" : "application/json"
