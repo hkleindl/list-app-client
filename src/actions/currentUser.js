@@ -6,6 +6,7 @@ export const setCurrentUser = user => {
 }
 // async action creators
 export const login = credentials => {
+    console.log("credentials are ".credentials)
     return dispatch => {
         const configObj = {
             method: "POST",
