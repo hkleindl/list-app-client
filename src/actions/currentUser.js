@@ -1,4 +1,5 @@
 import { clearLoginForm } from "./loginForm.js"
+import { getMyLists } from "./myLists.js"
 
 export const setCurrentUser = user => {
     return {
@@ -31,6 +32,7 @@ export const login = credentials => {
                     alert(json.error)
                 } else {
                     dispatch(setCurrentUser(json.data))
+                    dispatch(getMyLists())
                     dispatch(clearLoginForm())
                 }
             }  
@@ -66,6 +68,7 @@ export const getCurrentUser = () => {
                     alert(json.error)
                 } else {
                     dispatch(setCurrentUser(json.data))
+                    dispatch(getMyLists())
                 }
             }  
             )
