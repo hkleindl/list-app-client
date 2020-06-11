@@ -5,7 +5,7 @@ import { logout } from '../actions/currentUser.js'
 const Logout = ({logout}) => {
     
     return (
-        <button onClick={logout}>Log Out</button>
+        <button class="btn btn-secondary dropdown-item" onClick={logout}>Log Out</button>
     )
 }
 
