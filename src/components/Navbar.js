@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import Login from "./Login.js"
 import UserMenu from "./UserMenu.js"
 import NavLinks from "./NavLinks.js"
-import SearchBar from './SearchBar.js'
 
 const Navbar = ({ currentUser }) => {
     
@@ -18,10 +17,7 @@ const Navbar = ({ currentUser }) => {
                 <div class="collapse navbar-collapse" id="navbarsExample04">
                     
                     { currentUser ? 
-                            [
-                            <NavLinks />,
-                            <SearchBar />
-                            ] :       
+                            <NavLinks /> :       
                             null
                     }
 
