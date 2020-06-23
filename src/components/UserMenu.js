@@ -5,11 +5,11 @@ const UserMenu = () => {
     
     return (
         <li class="nav-item dropdown navbar-nav">
-            <div class="nav-link dropdown-toggle" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="btn nav-link dropdown-toggle mb-n2" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="material-icons">
                     account_circle
                 </span>
-            </div>
+            </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown04">
                 <a class="dropdown-item" href="#">Action</a>
                 <a class="dropdown-item" href="#">Another action</a>
