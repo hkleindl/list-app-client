@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { connect } from 'react-redux'
 import { getCurrentUser } from './actions/currentUser.js'
+import { BrowserRouter as Router, Route, Link} from 'react-router'
 import Navbar from './components/Navbar';
 
 class App extends Component {
