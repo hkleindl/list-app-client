@@ -14,17 +14,17 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <Navbar/>
-        <Router>
+      <Router>
+        <div className="App">
+          <Navbar/>
           <div>
             <Link class="btn btn-secondary" to="/signup">Sign Up</Link>
           </div>
           <Route path="/signup">
             <SignUp/>
           </Route>
-        </Router>
-      </div> 
+        </div> 
+      </Router>
     )
   }
   
