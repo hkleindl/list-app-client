@@ -3,7 +3,7 @@ const initialState = {
     password: ""
 }
 
-export default (initialState, action) => {
+export default (state = initialState, action) => {
     switch (action.type) {
         case 'UPDATE_SIGN_UP_FORM':
             return action.formData
