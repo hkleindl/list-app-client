@@ -1,6 +1,6 @@
 import { clearLoginForm } from "./loginForm.js"
 import { getMyLists } from "./myLists.js"
-import { clearSignUpForm } from "./signUpFrom.js"
+import { clearSignUpForm } from "./signUpForm.js"
 
 export const setCurrentUser = user => {
     return {
