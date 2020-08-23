@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { updateSignUpForm } from '../actions/SignUpForm.js'
+import { updateSignUpForm } from '../actions/signUpForm.js'
 import { signUp } from '../actions/currentUser.js'
 
 const SignUp = ({ signUpFormData, updateSignUpForm, signUp }) => {
@@ -16,7 +16,7 @@ const SignUp = ({ signUpFormData, updateSignUpForm, signUp }) => {
 
     const handleOnSubmit = e => {
         e.preventDefault()
-        signUp(SignUpFormData)
+        signUp(signUpFormData)
     }
     
     return (
@@ -30,9 +30,9 @@ const SignUp = ({ signUpFormData, updateSignUpForm, signUp }) => {
     )
 }
 
-const mapStateToProps = ({ signUpForm }) => {
+const mapStateToProps = ({ signUpFormData }) => {
     return {
-        signUpForm
+        signUpFormData
     }
     
 }
