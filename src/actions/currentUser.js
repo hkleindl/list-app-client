@@ -1,5 +1,6 @@
 import { clearLoginForm } from "./loginForm.js"
 import { getMyLists } from "./myLists.js"
+import { clearSignUpForm } from "./signUpFrom.js"
 
 export const setCurrentUser = user => {
     return {
@@ -38,6 +39,29 @@ export const login = credentials => {
             }  
             )
             .catch(console.log)
+    }
+}
+
+export const signUp = (signUpCredentials) => {
+    return dispatch => {
+        return fetch("http://localhost:3000/api/v1/signup", {
+            credentials: "include",
+            method: "POST",
+            headers: {
+                "Content-Type" : "application/json"
+            },
+            body: JSON.stringify(signUpCredentials)
+        })
+        .then(r => r.json())
+        .then(json => {
+            if (json.error) {
+                alert(json.error) 
+            } else {
+                dispatch(setCurrentUser(json.data))
+                dispatch(getMyLists)
+                dispatch(clearSignUpForm)
+            }
+        })
     }
 }
 
