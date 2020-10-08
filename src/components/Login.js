@@ -22,10 +22,10 @@ const Login = ({ loginForm, updateLoginForm, login }) => {
 
     return (
         <form onSubmit={handleOnSubmit}>
-            <div class="form-inline">
-                <input class="form-control form-control-sm mr-2" type="text" name="username" value={loginForm.username} onChange={handleInputChange} placeholder="Username"/>
-                <input class="form-control form-control-sm mr-2" type="password" name="password" value={loginForm.password} onChange={handleInputChange} placeholder="Password"/>
-                <input class="btn btn-secondary btn-sm form-control form-control-sm mr-2" type="submit" value="Log In"/>
+            <div className="form-inline">
+                <input className="form-control form-control-sm mr-2" type="text" name="username" value={loginForm.username} onChange={handleInputChange} placeholder="Username"/>
+                <input className="form-control form-control-sm mr-2" type="password" name="password" value={loginForm.password} onChange={handleInputChange} placeholder="Password"/>
+                <input className="btn btn-secondary btn-sm form-control form-control-sm mr-2" type="submit" value="Log In"/>
             </div>
         </form>
     )
