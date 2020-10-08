@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import './App.css';
 import { connect } from 'react-redux'
 import { getCurrentUser } from './actions/currentUser.js'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { Route, Link, withRouter } from 'react-router-dom'
 import SignUp from './components/SignUp'
-import Navbar from './components/Navbar';
+import Navbar from './components/Navbar'
+import Login from './components/Login'
+import Home from './components/Home'
 
 class App extends Component {
 
@@ -14,17 +16,16 @@ class App extends Component {
 
   render() {
     return (
-      <Router>
         <div className="App">
           <Navbar/>
           <div>
-            <Link class="btn btn-secondary" to="/signup">Sign Up</Link>
+            <Route exact path="/signup" component={SignUp}/>
+            <Route exact path="/login" component={Login}/>
+            <Route exact path="/" component={Home}/>
+
           </div>
-          <Route path="/signup">
-            <SignUp/>
-          </Route>
+          
         </div> 
-      </Router>
     )
   }
   
@@ -36,4 +37,4 @@ const mapStateToProps = ({currentUser}) => {
   }
 }
 
-export default connect(mapStateToProps, { getCurrentUser })(App);
+export default withRouter(connect(mapStateToProps, { getCurrentUser })(App));
